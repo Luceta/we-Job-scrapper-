@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+
+
+:root {
+  --brown: rgb(180, 102, 0);
+  --brown-hover-light: rgb(218, 136, 42);
+  --brown-dark: rgb(133, 75, 0);
+  --navbar-padding: 1rem;
+  --navbar-font-size: 1.5rem;
+
+  --search-font-size: 2rem;
+}
+
+/* general initialize */
+body {
+  margin: 0;
+  background: #fcf876;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+main {
+  margin-top: calc(4rem + var(--navbar-font-size) + 2*var(--navbar-padding));
+}
+button {
+  cursor: pointer;
+}
+
+
+/* navbar */
+
+.navbar {
+  overflow: hidden;
+  background: var(--brown-dark);
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar a{
+  float: left;
+  color: white;
+  display: block;
+  text-align: center;
+  padding: var(--navbar-padding);
+  font-size: var(--navbar-font-size);
+}
+
+.navbar a:hover{
+  background: var(--brown-hover-light);
+  transition: ease 0.4s;
+}
+
+/* search-form */
+
+.search-form {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.search-form h1 a{
+  color: var(--brown-dark);  
+  text-shadow: 3px 3px var(--brown-hover-light), 5px 5px var(--brown);
+  font-family: 'Do Hyeon', sans-serif;
+  font-size: 3rem;
+}
+
+.search-title h1{
+  color: var(--brown-dark);
+  margin-bottom: 0;
+}
+.search-title h3{
+  margin-top: 0.5rem;
+  color: var(--brown)
+}
+
+.search-form .search-input {
+  width: 50%;
+  font-size: var(--search-font-size);
+  border: 0.3rem solid var(--brown-dark);
+  border-radius: 0.4rem;
+  padding: 0.3rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+button.search-button {
+  font-size: var(--search-font-size);
+  background-color: transparent;
+  color: var(--brown-dark);
+  border: transparent;
+  /* border: 0.3rem solid var(--brown-dark); */
+  border-radius: 2rem;
+  padding: 0.3rem;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  align-items: center;
+}
+
+
+/* search-history */
+.search-history {
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+button.search-history-button {
+  border: none;
+  color: white;
+  background-color: rgb(96, 180, 236);
+  padding: 0.3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+  font-size: 1.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 4px 4px #2c7680;
+  
+  transition: ease 0.2s;
+}
+
+button.search-history-button:hover {
+  background-color: rgb(68, 166, 231);
+  font-size: 1.7rem;
+}
+
+.delete-history {
+  text-align: center;;
+}
+
+.delete-history button{
+  border: none;
+  color: white;
+  background-color: #666;
+  padding: 0.3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: 1.5rem;
+  font-size: 1.5rem;
+  border-radius: 1.5rem;
+  
+
+  transition: ease 0.2s;
+}
+
+.button-hidden {
+  display: none;
+}
+
+.delete-history button:hover{
+  background-color: rgb(255, 159, 159);
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+/* search-result */
+
+.search-title {
+  text-align: center;
+}
+
+.search-result {
+  margin: 1rem;
+  margin-bottom: 2rem;
+}
+
+.result-table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table{
+  color: var(--brown-dark);
+}
+
+th, td{
+  padding: 0.5rem;
+}
+
+th{
+  border-bottom: 0.3rem solid var(--brown);
+  text-align: left;
+  font-size: 1.5rem;
+}
+
+td{
+  font-weight: bold;
+  border-bottom: 0.1rem solid var(--brown-hover-light);
+}
+
+tr {
+  background-color: transparent;
+}
+
+td a{
+  color: var(--brown-dark);
+  transition: transform .2s;
+}
+
+td a:hover{
+  text-decoration: underline;
+}
+
+/* logo */
+.logo-container {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+img.logo{
+  height: 3rem;
+  margin: 1.5rem;
+  transition: ease 0.2s;
+}
+
+img.logo:hover{
+  height: 4rem;
+}

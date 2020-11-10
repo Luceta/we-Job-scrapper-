@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>job scrapping</title>
+
+  <!-- style -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.14.0/css/all.min.css">
+
+</head>
+<body>
+
+  <main>
+  
+    <!-- search form -->
+    <form action="/search" method='GET' class='search-form'>
+      <div>
+        <h1><a href='/'># We Find Job</a></h1>
+      </div>
+      <input required class='search-input' id='keyword' type="text" name="word" placeholder="svelte" >
+      <button class='search-button'><i class="fas fa-search"></i></button>
+    </form>
+
+    <!-- search-history -->
+    <div class="search-history">
+    </div>
+
+    <div class="delete-history">
+      <button><i class="fas fa-trash-alt"></i> Delete History</button>
+    </div>
+
+    <div class="logo-container">
+      <a href="https://weworkremotely.com/" target="_blank" class='logo-link'>
+        <img class='logo' src="../static/img/weworkremotely.png" alt="weworkremotely">
+      </a>
+      <a href="https://remoteok.io/" target="_blank" class='logo-link'>
+        <img class='logo' src="../static/img/remoteok.png" alt="weworkremotely">
+      </a>
+      <a href="https://stackoverflow.com/jobs" target="_blank" class='logo-link'>
+        <img class='logo' src="../static/img/stackoverflowjobs.png" alt="weworkremotely">
+      </a>
+    </div>
+
+    <script type='module' src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </main>
+</body>
+</html>

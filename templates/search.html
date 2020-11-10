@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Result</title>
+
+  <!-- style -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.14.0/css/all.min.css">
+
+</head>
+<body>
+  <div class="navbar">
+    <a href="/"><i class="fas fa-home"></i> Home</a>
+  </div>
+
+  <main>
+
+    <div class='search-title'>
+      <h1>{{ word }} Search Result</h1>
+      <h3>{{ length }} jobs found</h3>
+    </div>    
+
+    <div class="search-result">
+      <table class="result-table">
+        <th>company</th>
+        <th>job</th>
+        <!-- empty list for no search result -->
+        {% if jobs==[] %}
+          <tr>
+            <td>No Result</td>
+            <td>No Result</td>
+          </tr>
+        {% endif %}
+        <!-- search result -->
+        {% for job in jobs %}
+          <tr>
+            <td>{{ job.company }}</td>
+            <td><a href={{job.apply_link}} target="_blank">{{ job.title }}</a></td>
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
+
+    <div class="logo-container">
+      <a href="https://weworkremotely.com/" target="_blank" class='logo-link'>
+        <img class='logo' src="../static/img/weworkremotely.png" alt="weworkremotely">
+      </a>
+      <a href="https://remoteok.io/" target="_blank" class='logo-link'>
+        <img class='logo' src="../static/img/remoteok.png" alt="weworkremotely">
+      </a>
+      <a href="https://stackoverflow.com/jobs" target="_blank" class='logo-link'>
+        <img class='logo' src="../static/img/stackoverflowjobs.png" alt="weworkremotely">
+      </a>
+    </div>
+
+  </main>
+</body>
+</html>
