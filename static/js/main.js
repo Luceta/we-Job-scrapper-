@@ -74,6 +74,7 @@ function submitHandler(){
     localStorage.setItem(HISTORY_KEY, localStorage.getItem(HISTORY_KEY)+`,${keyword}`);
   }
   else{
+    // without comma if first history
     localStorage.setItem(HISTORY_KEY, keyword);
   }
   
@@ -84,7 +85,12 @@ function updateRepeatedKeywordIndex(repeatedKeyword, historyArr){
   const repeatedKeyworIndex = historyArr.findIndex(
     e=> { if(e===repeatedKeyword) return true} )
   historyArr.splice(repeatedKeyworIndex, 1);
-  localStorage.setItem(HISTORY_KEY, historyArr + `,${repeatedKeyword}`);
+  
+  //don't have to update order if there is only one history
+  if(historyArr.includes(',')){
+    localStorage.setItem(HISTORY_KEY, historyArr + `,${repeatedKeyword}`);
+  }
+  
 }
 
 function setNewPlaceholder(){
@@ -104,8 +110,8 @@ function deleteHistory(){
 function clickHistoryButton(event){
   const historyArr = localStorage.getItem(HISTORY_KEY).split(',');
   const clickedKeyword = event.target.innerHTML;
+  
   updateRepeatedKeywordIndex(clickedKeyword, historyArr);
-  console.log(clickedKeyword)
 }
 
 
