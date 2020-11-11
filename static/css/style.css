@@ -3,7 +3,7 @@
 
 :root {
   --brown: rgb(180, 102, 0);
-  --brown-hover-light: rgb(218, 136, 42);
+  --brown--light: rgb(218, 136, 42);
   --brown-dark: rgb(133, 75, 0);
   --navbar-padding: 1rem;
   --navbar-font-size: 1.5rem;
@@ -48,7 +48,7 @@ button {
 }
 
 .navbar a:hover{
-  background: var(--brown-hover-light);
+  background: var(--brown--light);
   transition: ease 0.4s;
 }
 
@@ -61,7 +61,7 @@ button {
 
 .search-form h1 a{
   color: var(--brown-dark);  
-  text-shadow: 3px 3px var(--brown-hover-light), 5px 5px var(--brown);
+  text-shadow: 3px 3px var(--brown--light), 5px 5px var(--brown);
   font-family: 'Do Hyeon', sans-serif;
   font-size: 3rem;
 }
@@ -73,6 +73,16 @@ button {
 .search-title h3{
   margin-top: 0.5rem;
   color: var(--brown)
+}
+.download-csv{
+  color: white;
+  background-color: var(--brown--light);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: ease 0.2s;
+}
+.download-csv:hover{
+  background-color: var(--brown);
 }
 
 .search-form .search-input {
@@ -188,7 +198,7 @@ th{
 
 td{
   font-weight: bold;
-  border-bottom: 0.1rem solid var(--brown-hover-light);
+  border-bottom: 0.1rem solid var(--brown--light);
 }
 
 tr {
